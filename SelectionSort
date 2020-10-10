@@ -1,0 +1,28 @@
+public class SelectionSort{
+    public static void main(String[] args){
+          int[] arr=new int[]{50,30,40,70,10,80,20};
+          
+          sort(arr);
+          
+          for(int i=0;i<arr.length;i++){
+              System.out.println(arr[i]);
+          }
+    
+    }
+    public static int[] sort(int[] arr){
+          for(int i=0;i<arr.length;i++){
+              int min=i;// take the frist index element to be minimum_____then check with all other elements if there is minimum than this 
+              for(int j=i+1;j<arr.length;j++){
+                  if(arr[min]>arr[j]){
+                      min=j;
+                  }
+              }
+              int temp=arr[i];
+              arr[i]=arr[min];
+              arr[min]=temp;
+          }
+          return arr;
+    }
+
+
+}
