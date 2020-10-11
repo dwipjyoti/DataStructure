@@ -1,0 +1,45 @@
+public class QuickSort{
+      public class QuickSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] arr=new int[] {30,10,20,50,40,6,5};
+		qs(arr,0,arr.length-1);
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+	
+	
+	public static int[] qs(int[] arr,int start,int end) {
+		if(start<end) {
+			int pivot=partition(arr,start,end);
+			qs(arr,start,pivot-1);
+			qs(arr,pivot+1,end);
+		}
+		return arr;
+	}
+
+
+	private static int partition(int[] arr, int start, int end) {
+		int piv=end;
+		int i=start-1;
+		
+			
+		for(int j=start;j<end;j++) {
+        if(arr[j]<arr[piv]) {
+          i++;
+          int temp=arr[i];
+          arr[i]=arr[j];
+          arr[j]=temp;
+        }
+      }
+      int temp=arr[i+1];
+      arr[i+1]=arr[piv];
+      arr[piv]=temp;
+
+      return i+1;
+	}
+	
+
+}
