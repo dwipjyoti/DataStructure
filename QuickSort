@@ -23,22 +23,23 @@ public class QuickSort{
 
 	private static int partition(int[] arr, int start, int end) {
 		int piv=end;
-		int i=start-1;
+		int i=start-1;//the first index of sorted array (-1)
 		
 			
 		for(int j=start;j<end;j++) {
-        if(arr[j]<arr[piv]) {
-          i++;
-          int temp=arr[i];
-          arr[i]=arr[j];
-          arr[j]=temp;
-        }
-      }
-      int temp=arr[i+1];
-      arr[i+1]=arr[piv];
-      arr[piv]=temp;
+			if(arr[j]<arr[piv]) {
+			  i++;
+			  int temp=arr[i];
+			  arr[i]=arr[j];
+			  arr[j]=temp;
+			}
+		
+	         }
+	         int temp=arr[i+1];
+	         arr[i+1]=arr[piv];
+	         arr[piv]=temp;
 
-      return i+1;
+	         return i+1;
 	}
 	
 
