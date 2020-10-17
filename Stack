@@ -1,0 +1,40 @@
+/* Stack is a Logical-Data-Structure which are dependent on physical-data-structure for implementation like Array,LinkedList */
+/* stack follows First-In Last-Out operation.....Main operation of stack are push and pop */
+/* push inserts value in top of array and pop returns value from top of array */
+
+/* here we will use Array for implementation of Stack */
+
+
+
+public class Stack{
+    int[] arr;
+    int maxSize;
+    int top;
+    public Stack(int size){//initialize variables inside constructor---remember constructor can never be negative---search on google why
+        maxSize=size;
+        arr=new int[maxSize];
+        top=-1;
+    }
+    
+    public void push(int value){
+        top++;//on 1st iteration we increment top and it get 0 which is first index of array
+              //at every iteration we increment top so that we get next index
+        arr[top]=value;
+        
+    }
+    public int pop(){
+        int temp=arr[top];//value at the top of array
+        top--;//decrement top to set the previous index to be top element
+        return temp;
+    }
+    public boolean isEmpty(){
+        return (top==-1);//"==" this opearter returns boolean so we not need to use if else
+    }
+    public boolean isFull(){
+        return (top==arr.length-1);
+    }
+    
+
+
+
+} 
