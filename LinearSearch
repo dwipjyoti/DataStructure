@@ -1,4 +1,5 @@
 public class LinearSearch{
+
   public static void main(String[] args){
       int[] arr=new int[]{10,20,60,70,5,4};
       int index=search(arr,5);
